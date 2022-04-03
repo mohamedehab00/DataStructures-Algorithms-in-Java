@@ -1,0 +1,126 @@
+package com.DS;
+
+import dataStructures.BST;
+import dataStructures.DoublyLinkedList;
+import dataStructures.HashTable;
+import dataStructures.LinkedList;
+import java.util.Stack;
+
+public class Main {
+
+    public static void main(String[] args) {
+        //Linked List Generic Class Test
+        LinkedList<Integer> ll = new LinkedList<>();
+
+        ll.insertAtHead(10);
+        ll.insertAtHead(11);
+
+        ll.insertAtTail(9);
+        ll.insertAtTail(8);
+
+        ll.insertAtIdx(99, 2);
+
+        ll.insertAtIdx(1, 5);
+
+        ll.traverse();
+        System.out.println();
+
+
+        ll.deleteAtIdx(5);
+
+        ll.traverse();
+        System.out.println();
+
+        System.out.println(ll.search(5));
+
+        LinkedList<Integer> ll1 = new LinkedList<>(ll);
+        ll1.deleteAtTail();
+        ll1.traverse();
+        System.out.println();
+        ll.traverse();
+        System.out.println();
+
+        //Doubly Linked List Generic Class Test
+        DoublyLinkedList<Integer> dl = new DoublyLinkedList<>();
+        dl.insertAtHead(1);
+        dl.traverse();
+        dl.insertAtHead(2);
+        dl.insertAtTail(3);
+        dl.insertAtTail(99);
+
+        dl.insertAtIdx(55,4);
+
+        System.out.println();
+
+        dl.traverse();
+        System.out.println();
+
+        dl.deleteAtIdx(4);
+
+        System.out.println(dl.search(99));
+        dl.traverse();
+        System.out.println();
+
+        //Stack Generic Class Test
+        Stack<Integer> st = new Stack<>();
+        st.push(1);
+        st.push(2);
+        st.push(3);
+
+        System.out.println(st.peek());
+
+        st.pop();
+        System.out.println(st.peek());
+
+        st.pop();
+        st.pop();
+        System.out.println(st.isEmpty());
+
+        //Binary Search Tree Generic Class Test
+        BST<Integer> BinarySearchTree = new BST<>();
+
+        BinarySearchTree.insertNode(1);
+
+        BinarySearchTree.insertNode(7);
+
+        BinarySearchTree.insertNode(17);
+
+        BinarySearchTree.insertNode(3);
+
+        BinarySearchTree.insertNode(15);
+
+        BinarySearchTree.insertNode(18);
+
+        BinarySearchTree.insertNode(16);
+
+        BinarySearchTree.preOrderTraversal();
+        System.out.println();
+
+        BST<Integer> BinarySearchTree1 = new BST(BinarySearchTree);
+
+        BinarySearchTree.deleteNode(1);
+
+        BinarySearchTree.inOrderTraversal();
+        System.out.println();
+        BinarySearchTree.preOrderTraversal();
+        System.out.println();
+        BinarySearchTree.postOrderTraversal();
+        System.out.println();
+
+        BinarySearchTree.clear();
+        System.out.println(BinarySearchTree.getRoot());
+
+        BinarySearchTree1.preOrderTraversal();
+        System.out.println();
+
+        //HashTable Generic Class Test
+        HashTable<String,Integer> HT = new HashTable<>();
+        HT.addEntry("s",1);
+        HT.addEntry("z",1);
+        HT.addEntry("o",1);
+        HT.addEntry("i",1);
+        HT.traverse();
+        HT.removeEntry("i");
+        HT.removeEntry("o");
+    }
+}
