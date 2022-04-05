@@ -1,10 +1,17 @@
 package com.DS;
 
+import algorithms.sort;
 import dataStructures.BST;
 import dataStructures.DoublyLinkedList;
 import dataStructures.HashTable;
 import dataStructures.LinkedList;
+
+import java.io.ObjectStreamClass;
+import java.io.ObjectStreamField;
 import java.util.Stack;
+import java.util.function.Consumer;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -96,7 +103,7 @@ public class Main {
         BinarySearchTree.preOrderTraversal();
         System.out.println();
 
-        BST<Integer> BinarySearchTree1 = new BST(BinarySearchTree);
+        BST<Integer> BinarySearchTree1 = new BST<>(BinarySearchTree);
 
         BinarySearchTree.deleteNode(1);
 
@@ -122,5 +129,19 @@ public class Main {
         HT.traverse();
         HT.removeEntry("i");
         HT.removeEntry("o");
+
+        /*###################################################*/
+        //Algorithms Part
+
+        //Bubble Sort Generic Function
+        String[] Strarr = {"Mohamed","Mustafa","Ismail","Nada","Ameen"};
+        Integer[] Intarr = {10,2,5,3,60,1};
+
+        String[] sortedStrArr = sort.bubbleSort(Strarr);
+        Integer[] sortedIntArr = sort.insertionSort(Intarr);
+
+        Stream.of(sortedStrArr).forEach(x -> System.out.print(x+" "));
+        System.out.println();
+        Stream.of(sortedIntArr).forEach(x -> System.out.print(x+" "));
     }
 }
