@@ -1,16 +1,13 @@
 package com.DS;
 
+import algorithms.search;
 import algorithms.sort;
 import dataStructures.BST;
 import dataStructures.DoublyLinkedList;
 import dataStructures.HashTable;
 import dataStructures.LinkedList;
+import dataStructures.Stack;
 
-import java.io.ObjectStreamClass;
-import java.io.ObjectStreamField;
-import java.util.Stack;
-import java.util.function.Consumer;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -135,13 +132,33 @@ public class Main {
 
         //Bubble Sort Generic Function
         String[] Strarr = {"Mohamed","Mustafa","Ismail","Nada","Ameen"};
-        Integer[] Intarr = {10,2,5,3,60,1};
+        Integer[] Intarr = {2,5,7,9,7,0,3,1,77};
 
+        //Bubble Sort Algorithm
         String[] sortedStrArr = sort.bubbleSort(Strarr);
+        //Insertion Merge Sort Algorithm
         Integer[] sortedIntArr = sort.insertionSort(Intarr);
 
         Stream.of(sortedStrArr).forEach(x -> System.out.print(x+" "));
         System.out.println();
         Stream.of(sortedIntArr).forEach(x -> System.out.print(x+" "));
+        System.out.println();
+
+        //Inplace Merge Sort Algorithm
+        sort.mergeSort(0,Intarr.length-1,Intarr);
+
+        //Inplace Quick Sort Algorithm
+        sort.quickSort(0,Intarr.length-1,Intarr);
+
+        Stream.of(Intarr).forEach(x -> System.out.print(x+" "));
+        System.out.println();
+
+        //Linear Search Algorithm
+        int idx = search.linearSearch(3, Intarr);
+        System.out.println(idx);
+
+        //Binary Search Algorithm
+        idx = search.binarySearch(0, Intarr.length-1, 0, Intarr);
+        System.out.println(idx);
     }
 }
