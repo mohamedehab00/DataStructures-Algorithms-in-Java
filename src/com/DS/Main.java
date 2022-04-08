@@ -2,6 +2,7 @@ package com.DS;
 
 import algorithms.search;
 import algorithms.sort;
+import algorithms.stringSearch;
 import dataStructures.BST;
 import dataStructures.DoublyLinkedList;
 import dataStructures.HashTable;
@@ -160,5 +161,10 @@ public class Main {
         //Binary Search Algorithm
         idx = search.binarySearch(0, Intarr.length-1, 0, Intarr);
         System.out.println(idx);
+
+        //Naive String Search Algorithm
+        stringSearch.naiveSearch("AABA","AABAACAADAABAAABA");
+        //Boyer-Moore-Horspool String Search Algorithm
+        stringSearch.boyerMooreHorspoolSearch("TRUTH","THE TRUTH IS OUT HERE");
     }
 }
