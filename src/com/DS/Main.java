@@ -3,11 +3,7 @@ package com.DS;
 import algorithms.search;
 import algorithms.sort;
 import algorithms.stringSearch;
-import dataStructures.BST;
-import dataStructures.DoublyLinkedList;
-import dataStructures.HashTable;
-import dataStructures.LinkedList;
-import dataStructures.Stack;
+import dataStructures.*;
 
 import java.util.stream.Stream;
 
@@ -166,5 +162,12 @@ public class Main {
         stringSearch.naiveSearch("AABA","AABAACAADAABAAABA");
         //Boyer-Moore-Horspool String Search Algorithm
         stringSearch.boyerMooreHorspoolSearch("TRUTH","THE TRUTH IS OUT HERE");
+
+        Heap<Integer> heap = new Heap<>();
+        heap.push(3);
+        heap.push(2);
+        heap.push(1);
+        heap.push(0);
+
     }
 }
