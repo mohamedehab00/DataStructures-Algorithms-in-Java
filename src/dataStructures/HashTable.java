@@ -73,7 +73,7 @@ public class HashTable < T extends Comparable<? super T> , E >{
         this.Table = biggerTable;
     }
 
-    private void collapse(){
+    private void shrink(){
         if (this.len == 4){
             return;
         }
@@ -142,7 +142,7 @@ public class HashTable < T extends Comparable<? super T> , E >{
         this.items -= 1;
 
         if(((int)(this.len * this.fillFac)) > this.items){
-            this.collapse();
+            this.shrink();
         }
     }
 

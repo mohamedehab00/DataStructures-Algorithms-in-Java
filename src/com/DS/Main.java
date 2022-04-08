@@ -1,8 +1,6 @@
 package com.DS;
 
-import algorithms.search;
-import algorithms.sort;
-import algorithms.stringSearch;
+import algorithms.*;
 import dataStructures.*;
 
 import java.util.stream.Stream;
@@ -124,50 +122,75 @@ public class Main {
         HT.removeEntry("i");
         HT.removeEntry("o");
 
+
+        //Min Heap Generic Class Test
+        Heap<Integer> minHeap = new Heap<>();
+        minHeap.push(2);
+        minHeap.push(6);
+        minHeap.push(11);
+        minHeap.push(12);
+        System.out.println(minHeap.top());
+        minHeap.pop();
+        System.out.println(minHeap.top());
+        minHeap.pop();
+        System.out.println(minHeap.top());
+        minHeap.pop();
+        System.out.println(minHeap.top());
+
+        //Max Heap Generic Class Test
+        Heap<Integer> maxHeap = new Heap<>("max");
+        maxHeap.push(9);
+        maxHeap.push(7);
+        maxHeap.push(8);
+        maxHeap.push(4);
+        maxHeap.push(88);
+        System.out.println(maxHeap.top());
+        maxHeap.pop();
+        System.out.println(maxHeap.top());
+        maxHeap.pop();
+        System.out.println(maxHeap.top());
+        maxHeap.pop();
+        System.out.println(maxHeap.top());
+        maxHeap.pop();
+        System.out.println(maxHeap.top());
+
         /*###################################################*/
         //Algorithms Part
 
         //Bubble Sort Generic Function
-        String[] Strarr = {"Mohamed","Mustafa","Ismail","Nada","Ameen"};
-        Integer[] Intarr = {2,5,7,9,7,0,3,1,77};
+        String[] strArr = {"Mohamed","Mustafa","Ismail","Nada","Ameen"};
+        Integer[] intArr = {2,5,7,9,7,0,3,1,77};
 
         //Bubble Sort Algorithm
-        String[] sortedStrArr = sort.bubbleSort(Strarr);
+        String[] sortedStrArr = sort.bubbleSort(strArr);
         //Insertion Merge Sort Algorithm
-        Integer[] sortedIntArr = sort.insertionSort(Intarr);
+        Integer[] sortedIntArr = sort.insertionSort(intArr);
 
         Stream.of(sortedStrArr).forEach(x -> System.out.print(x+" "));
         System.out.println();
         Stream.of(sortedIntArr).forEach(x -> System.out.print(x+" "));
         System.out.println();
 
-        //Inplace Merge Sort Algorithm
-        sort.mergeSort(0,Intarr.length-1,Intarr);
+        //In-place Merge Sort Algorithm
+        sort.mergeSort(0,intArr.length-1,intArr);
 
-        //Inplace Quick Sort Algorithm
-        sort.quickSort(0,Intarr.length-1,Intarr);
+        //In-place Quick Sort Algorithm
+        sort.quickSort(0,strArr.length-1,intArr);
 
-        Stream.of(Intarr).forEach(x -> System.out.print(x+" "));
+        Stream.of(intArr).forEach(x -> System.out.print(x+" "));
         System.out.println();
 
         //Linear Search Algorithm
-        int idx = search.linearSearch(3, Intarr);
+        int idx = search.linearSearch(3, intArr);
         System.out.println(idx);
 
         //Binary Search Algorithm
-        idx = search.binarySearch(0, Intarr.length-1, 0, Intarr);
+        idx = search.binarySearch(0, intArr.length-1, 0, intArr);
         System.out.println(idx);
 
         //Naive String Search Algorithm
         stringSearch.naiveSearch("AABA","AABAACAADAABAAABA");
-        //Boyer-Moore-Horspool String Search Algorithm
+        //Boyer-Moore-Hors-pool String Search Algorithm
         stringSearch.boyerMooreHorspoolSearch("TRUTH","THE TRUTH IS OUT HERE");
-
-        Heap<Integer> heap = new Heap<>();
-        heap.push(3);
-        heap.push(2);
-        heap.push(1);
-        heap.push(0);
-
     }
 }
